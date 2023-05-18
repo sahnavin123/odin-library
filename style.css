@@ -1,0 +1,29 @@
+.book-card {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 15rem;
+  width: 15rem;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+.book-card button {
+  margin-top: 5px;
+}
+
+#book-lists {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
