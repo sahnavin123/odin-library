@@ -1,5 +1,5 @@
 let myLibrary = [];
-let toggled = true;
+let addBookBtnToggle = true;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -45,7 +45,7 @@ const displayBooks = () => {
     pages.textContent = `Pages: ${book.pages}`;
 
     const read = document.createElement("p");
-    read.textContent = book.read ? "Read" : "Not Read";
+    read.textContent = book.read ? "Status: Read" : "Status: Not Read";
 
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
@@ -81,15 +81,15 @@ const toggleRead = (index) => {
 };
 
 document.getElementById("add-book").addEventListener("click", () => {
-  toggled
+  addBookBtnToggle
     ? (document.getElementById("new-form").style.display = "block")
     : (document.getElementById("new-form").style.display = "none");
 
-  toggled = !toggled;
+  addBookBtnToggle = !addBookBtnToggle;
 });
 
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   addBookToLibrary();
-  toggled = !toggled;
+  addBookBtnToggle = !addBookBtnToggle;
 });
