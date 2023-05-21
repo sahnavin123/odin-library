@@ -1,29 +1,107 @@
-.book-card {
-  border: 1px solid black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#book-lists .book-card {
+  background-color: rgb(65, 132, 132);
+  border-radius: 2rem;
   padding: 10px;
   margin-bottom: 10px;
   height: 15rem;
   width: 15rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.heading{
-    display: flex;
-    justify-content: center;
+#book-lists .book-card button {
+  border-radius: 2rem;
+  outline: none;
+  padding: 0.2rem 0px;
+  width: 50%;
+  margin-left: 20%;
+}
+
+#book-lists .book-card button:hover {
+  background-color: rgb(163, 119, 205);
+  color: white;
+}
+
+.heading {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .book-card button {
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 #book-lists {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
 }
 
-.form-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container #new-form {
+  background-color: rgb(183, 181, 181);
+  height: 300px;
+  width: 30%;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+form .input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+form .input-container:nth-child(4) {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+form .input-container input {
+  padding: 2px 1rem;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+}
+
+form .btn {
+  margin-left: 40%;
+  padding: 0.5rem 2rem;
+}
+
+form .btn:hover {
+  background-color: rgb(119, 119, 245);
+  color: white;
+}
+
+.btn {
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+  border-radius: 1rem;
+}
+
+.btn:hover {
+  background-color: rgb(193, 193, 193);
 }

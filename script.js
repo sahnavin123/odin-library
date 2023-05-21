@@ -1,4 +1,5 @@
 let myLibrary = [];
+let toggled = true;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -7,7 +8,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary() {
+const addBookToLibrary = () => {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
@@ -24,9 +25,9 @@ function addBookToLibrary() {
   document.getElementById("read").checked = false;
 
   document.getElementById("new-form").style.display = "none";
-}
+};
 
-function displayBooks() {
+const displayBooks = () => {
   const bookList = document.querySelector("#book-lists");
   bookList.innerHTML = "";
 
@@ -34,7 +35,7 @@ function displayBooks() {
     const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
 
-    const title = document.createElement("h3");
+    const title = document.createElement("h2");
     title.textContent = book.title;
 
     const author = document.createElement("p");
@@ -67,23 +68,28 @@ function displayBooks() {
 
     bookList.appendChild(bookCard);
   });
-}
+};
 
-function removeBook(index) {
+const removeBook = (index) => {
   myLibrary = myLibrary.filter((book, i) => i !== index);
   displayBooks();
-}
+};
 
-function toggleRead(index) {
+const toggleRead = (index) => {
   myLibrary[index].read = !myLibrary[index].read;
   displayBooks();
-}
+};
 
 document.getElementById("add-book").addEventListener("click", () => {
-  document.getElementById("new-form").style.display = "block";
+  toggled
+    ? (document.getElementById("new-form").style.display = "block")
+    : (document.getElementById("new-form").style.display = "none");
+
+  toggled = !toggled;
 });
 
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   addBookToLibrary();
+  toggled = !toggled;
 });
