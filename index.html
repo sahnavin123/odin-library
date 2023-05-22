@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="heading">My Library</h1>
+    <div id="book-lists">
+        <!-- here the book item will be added -->
+    </div>
+    <div class="form-container">
+        <button class="btn" id="add-book">Add New Book</button>
+        <div id="new-form" style="display: none;">
+            <h2>Add a New Book</h2>
+            <form action="">
+                <div class="input-container">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required><br>
+                </div>
+                <div class="input-container">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" required><br>
+                </div>
+                <div class="input-container">
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" id="pages" required min="2" max="10000"><br>
+                </div>
+                <div class="input-container">
+                    <label for="read">Read:</label>
+                    <input type="checkbox" id="read"><br>
+                </div>
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
