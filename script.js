@@ -2,14 +2,28 @@ let myLibrary = [];
 let addBookBtnToggle = true;
 
 const Book = (title, author, pages, read) => {
-  return {title, author, pages, read};
+  return { title, author, pages, read };
 };
 
 const addBookToLibrary = () => {
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
+  const titleInput = document.getElementById("title");
+  const authorInput = document.getElementById("author");
   const pages = document.getElementById("pages").value;
   const read = document.getElementById("read").checked;
+
+  const title = titleInput.value;
+  const author = authorInput.value;
+
+  if (title.length > 20 && author.length > 20) {
+    alert("Title and author character limit exceeded (20 characters maximum)!");
+    return;
+  } else if (title.length > 20) {
+    alert("Title character limit exceeded (20 characters maximum)!");
+    return;
+  } else if (author.length > 20) {
+    alert("Author character limit exceeded (20 characters maximum)!");
+    return;
+  }
 
   const newBook = Book(title, author, pages, read);
   myLibrary.push(newBook);
