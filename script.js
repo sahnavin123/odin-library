@@ -1,12 +1,9 @@
 let myLibrary = [];
 let addBookBtnToggle = true;
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+const Book = (title, author, pages, read) => {
+  return {title, author, pages, read};
+};
 
 const addBookToLibrary = () => {
   const title = document.getElementById("title").value;
@@ -14,7 +11,7 @@ const addBookToLibrary = () => {
   const pages = document.getElementById("pages").value;
   const read = document.getElementById("read").checked;
 
-  const newBook = new Book(title, author, pages, read);
+  const newBook = Book(title, author, pages, read);
   myLibrary.push(newBook);
 
   displayBooks();
